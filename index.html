@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Personal website for Joaquin Cabra Romero, a computer engineering student building embedded software, computer vision systems, digital hardware, robotics, and racing electronics."
+    >
+    <title>Joaquin Cabra Romero | Embedded Systems, Vision, and Hardware</title>
+    <link rel="preload" href="vision/a53f6762-0327-4675-a7c8-bcf79946cfe9.png" as="image">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="cursor-glow" data-cursor-glow aria-hidden="true"></div>
+    <canvas class="snow-canvas" data-snow aria-hidden="true"></canvas>
+    <div class="site-shell">
+      <header class="topbar" data-topbar>
+        <a class="brand-mark" href="#home" aria-label="Joaquin Cabra Romero home">
+          <span>JC</span>
+        </a>
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <a href="#work">Work</a>
+          <a href="#systems">Systems</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="topbar-actions">
+          <label class="snow-control">
+            <span>Snow</span>
+            <input data-snow-volume type="range" min="0" max="100" value="34" aria-label="Snowfall volume">
+          </label>
+          <a class="icon-link" href="https://github.com/gitjc05" aria-label="GitHub profile">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.77-.24.77-.54v-2.1c-3.13.68-3.8-1.34-3.8-1.34-.5-1.3-1.25-1.64-1.25-1.64-1.03-.7.08-.68.08-.68 1.14.08 1.74 1.18 1.74 1.18 1.01 1.73 2.65 1.23 3.3.94.1-.73.4-1.23.72-1.51-2.5-.29-5.13-1.25-5.13-5.57 0-1.23.44-2.23 1.17-3.02-.12-.29-.51-1.43.11-2.98 0 0 .96-.3 3.12 1.15a10.8 10.8 0 0 1 5.68 0c2.16-1.46 3.11-1.15 3.11-1.15.63 1.55.24 2.69.12 2.98.73.8 1.17 1.8 1.17 3.02 0 4.33-2.63 5.28-5.14 5.56.41.36.77 1.05.77 2.12v3.14c0 .3.2.65.78.54A11.2 11.2 0 0 0 12 .8Z"/>
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero" id="home" aria-label="Intro">
+          <picture class="hero-art">
+            <source srcset="vision/a53f6762-0327-4675-a7c8-bcf79946cfe9.png" media="(min-width: 680px)">
+            <img src="vision/39f0cbc4-80c6-4e73-869c-efc8e5996ac1.png" alt="Warm engineering cabin with snowboarding gear, electronics workbench, computer vision modules, and FPGA boards.">
+          </picture>
+          <div class="hero-shade" aria-hidden="true"></div>
+
+          <div class="hero-content">
+            <p class="eyebrow">Computer engineering at the edge of snow, silicon, and signal</p>
+            <h1>Joaquin Cabra Romero</h1>
+            <p class="hero-copy">
+              I build embedded software, machine vision, and hardware-backed systems that move from
+              models and simulations into real benches, race cars, sensors, and field tests.
+            </p>
+            <div class="hero-actions" aria-label="Contact links">
+              <a class="primary-action" href="#work">
+                <span>Explore the bench</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14m0 0 6-6m-6 6-6-6"/></svg>
+              </a>
+              <a class="secondary-action" href="https://linkedin.com/in/joaquin-cr221625">LinkedIn</a>
+              <a class="secondary-action" href="https://github.com/gitjc05">GitHub</a>
+            </div>
+          </div>
+
+          <aside class="signal-panel" aria-label="Current signal">
+            <div data-snow-catch>
+              <span class="panel-label">Base</span>
+              <strong>San Diego, CA</strong>
+            </div>
+            <div data-snow-catch>
+              <span class="panel-label">Degree</span>
+              <strong>B.S. Computer Engineering, RIT</strong>
+            </div>
+            <div data-snow-catch>
+              <span class="panel-label">Expected</span>
+              <strong>May 2028</strong>
+            </div>
+          </aside>
+        </section>
+
+        <section class="section intro-band" id="work">
+          <div class="section-kicker">What I do</div>
+          <div class="intro-grid">
+            <h2>Systems that have to survive contact with hardware.</h2>
+            <p>
+              My work sits where clean software abstractions meet physical systems: embedded
+              communications, real-time classification, camera pipelines, FPGA logic, firmware,
+              and the test tools that make each layer measurable.
+            </p>
+          </div>
+        </section>
+
+        <section class="section experience-section">
+          <div class="section-heading">
+            <div>
+              <div class="section-kicker">Experience</div>
+              <h2>Work that connects models, interfaces, and deployed systems.</h2>
+            </div>
+          </div>
+
+          <div class="timeline">
+            <article class="timeline-item major-role" data-snow-catch>
+              <span class="timeline-date">Jan 2026 - Dec 2026</span>
+              <div>
+                <h3>Embedded Software Engineer Co-op</h3>
+                <p class="org">CACI International, formerly Arka, Danbury, CT</p>
+                <p>
+                  Contributed across the full embedded software path for defense-oriented sensing
+                  platforms, from model architecture and real-time algorithms to communications,
+                  simulation, hardware testing, and customer-facing demos.
+                </p>
+                <aside class="scope-note">
+                  Technical details and performance metrics are intentionally omitted
+                  as they relate to controlled information. Public descriptions focus on
+                  responsibilities, system areas, and engineering scope.
+                </aside>
+                <ul class="detail-list">
+                  <li>Created a novel convolutional neural network architecture for defense platforms.</li>
+                  <li>Designed tracking and classification algorithms for real-time threat warning systems.</li>
+                  <li>Built modular communication software across UDP, TCP, and serial networks for embedded targets.</li>
+                  <li>Developed end-user graphical interfaces for customer demos and internal validation.</li>
+                  <li>Ran hardware tests and wrote simulators that enabled full-path testing on a single machine.</li>
+                </ul>
+                <figure class="role-visual">
+                  <img src="vision/refw.png" alt="Cabin workbench scene with defense platform reference models, snowboarding gear, and engineering monitors.">
+                  <figcaption>Embedded defense systems work: model-driven development, simulation, and field-oriented validation.</figcaption>
+                </figure>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <span class="timeline-date">Jan 2024 - Present</span>
+              <div>
+                <h3>Collegiate Tutor</h3>
+                <p class="org">Rochester Institute of Technology</p>
+                <p>
+                  Tutor computer science, math, and circuits for underrepresented and low-income
+                  students, helping students maintain a 100% passing rate and an average 1.5 letter grade improvement.
+                </p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <span class="timeline-date">Jan 2024 - May 2024</span>
+              <div>
+                <h3>Machine Learning Engineer Contractor</h3>
+                <p class="org">Data Annotation Tech, Remote</p>
+                <p>
+                  Evaluated annotator assessments of software engineering LLMs and helped improve
+                  the Achilles model on code generation, documentation, visualization, and analysis tasks.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section split-section" id="systems">
+          <div class="section-heading">
+            <div>
+              <div class="section-kicker">Engineering stack</div>
+              <h2>From low-level control to visual intelligence.</h2>
+            </div>
+            <p>
+              A practical mix of firmware, vision, machine learning deployment, hardware design,
+              and desktop/web interfaces for demos, debugging, and validation.
+            </p>
+          </div>
+
+          <div class="system-board">
+            <article class="system-card">
+              <div class="card-topline">
+                <span>01</span>
+                <strong>Embedded communications</strong>
+              </div>
+              <p>UDP, TCP, serial links, FDCAN firmware, SEGGER RTT, OpenOCD, Linux/bash, Docker, and real hardware bring-up.</p>
+            </article>
+            <article class="system-card">
+              <div class="card-topline">
+                <span>02</span>
+                <strong>Computer vision and ML</strong>
+              </div>
+              <p>OpenCV, PyTorch, TensorFlow, ONNX Runtime C++ deployment, camera SDKs, GenICam, Basler Pylon, and LUCID Arena.</p>
+            </article>
+            <article class="system-card">
+              <div class="card-topline">
+                <span>03</span>
+                <strong>Digital design</strong>
+              </div>
+              <p>VHDL, Verilog, ModelSim, Vivado, processor architecture, cache design, simulation, and board-level validation.</p>
+            </article>
+            <article class="system-card">
+              <div class="card-topline">
+                <span>04</span>
+                <strong>Interfaces and tools</strong>
+              </div>
+              <p>React, TypeScript, JavaScript, Django, Spring Boot, Angular, WPF, C#, Python, C++, MySQL, and Jenkins.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section projects-section" id="projects">
+          <div class="section-heading">
+            <div>
+              <div class="section-kicker">Selected builds</div>
+              <h2>Projects with a bench-side pulse.</h2>
+            </div>
+            <p>Hardware, firmware, processor design, and web software, arranged like tools within reach.</p>
+          </div>
+
+          <div class="project-grid">
+            <article class="project-card featured-project" data-snow-catch>
+              <span class="project-type">Formula SAE</span>
+              <h3>RIT Racing Team Electrical</h3>
+              <p>
+                Designed and tested regulation vehicle status lights, then wrote C firmware for
+                FDCAN communication between boards used to validate suspension loads.
+              </p>
+              <div class="tag-row">
+                <span>Altium</span>
+                <span>C Firmware</span>
+                <span>FDCAN</span>
+              </div>
+            </article>
+            <article class="project-card">
+              <span class="project-type">Processor design</span>
+              <h3>32-bit MIPS Processor</h3>
+              <p>
+                Designed a pipelined RISC processor in HDL with instruction/data caches, hazard-aware
+                control, and simulation-driven verification.
+              </p>
+              <div class="tag-row">
+                <span>VHDL</span>
+                <span>Verilog</span>
+                <span>ModelSim</span>
+              </div>
+            </article>
+            <article class="project-card">
+              <span class="project-type">Full stack</span>
+              <h3>Brogram</h3>
+              <p>
+                Built a full-stack social web app for programmers to discuss bugs, technical topics,
+                and new technologies.
+              </p>
+              <div class="tag-row">
+                <span>Django</span>
+                <span>Python</span>
+                <span>JavaScript</span>
+              </div>
+              <a class="inline-link" href="https://jc05.pythonanywhere.com">Visit project</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="section processor-section" aria-label="32-bit MIPS processor">
+          <div class="processor-copy">
+            <div class="section-kicker">Processor deep dive</div>
+            <h2>Building a 32-bit MIPS processor from datapath to verification.</h2>
+            <p>
+              The MIPS project was not just an HDL exercise; it was a complete computer architecture
+              build. I implemented a 32-bit reduced instruction set processor with a five-stage
+              pipeline, separate 1 KB instruction and data caches, and control logic designed around
+              the realities of hazards, memory access, and instruction flow.
+            </p>
+            <p>
+              I used VHDL, Verilog, and ModelSim to move from architecture diagrams into tested
+              behavior, validating the datapath, pipeline registers, cache interactions, and timing
+              assumptions through waveform-level simulation. The project strengthened the way I think
+              about hardware/software boundaries: every instruction is both a software abstraction and
+              a physical sequence of signals that has to arrive correctly.
+            </p>
+            <div class="tag-row">
+              <span>32-bit RISC</span>
+              <span>5-stage pipeline</span>
+              <span>1 KB I-cache</span>
+              <span>1 KB D-cache</span>
+              <span>ModelSim</span>
+            </div>
+          </div>
+          <figure class="scene-card" data-snow-catch>
+            <img src="vision/risc32.png" alt="Workbench scene with FPGA-style development boards, oscilloscope, laptop waveforms, and processor debugging tools.">
+            <figcaption>Processor workbench: simulated waveforms, digital logic, and board-level thinking in one frame.</figcaption>
+          </figure>
+        </section>
+
+        <section class="section life-strip" aria-label="Outside the lab">
+          <div>
+            <div class="section-kicker">Outside the lab</div>
+            <h2>Snowboards, fight gyms, and market structure.</h2>
+          </div>
+          <p>
+            I like systems with feedback: carving through snow, K-1 and Muay Thai training,
+            race car electronics, and the discipline of options and futures trading. I also create
+            educational content about contracts and trading tools at
+            <a class="text-link" href="https://youtube.com/@skipacc">@skipacc</a>.
+          </p>
+        </section>
+
+        <section class="section contact-section" id="contact">
+          <div>
+            <div class="section-kicker">Contact</div>
+            <h2>Let's build where software has to touch the physical world.</h2>
+            <p>
+              I am especially interested in embedded systems, computer vision, robotics,
+              digital hardware, motorsport electronics, and tools that make hardware development faster.
+            </p>
+          </div>
+          <div class="contact-links">
+            <a href="https://linkedin.com/in/joaquin-cr221625">
+              <span>LinkedIn</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9"/></svg>
+            </a>
+            <a href="https://github.com/gitjc05">
+              <span>GitHub</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7m0 0H8m9 0v9"/></svg>
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
