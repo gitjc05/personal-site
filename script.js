@@ -206,15 +206,31 @@ if (snowCanvas) {
     alpha: randomBetween(0.26, 0.68)
   });
 
-  const seedFlakes = () => {
-    flakes.length = 0;
-    if (snowVolume <= 0) return;
-
+  const getTargetFlakeCount = () => {
+    if (snowVolume <= 0) return 0;
     const area = width * height;
     const density = 0.10 + snowVolume * 6.0;
-    const count = Math.round(Math.min(1200, Math.max(24, (area / 11000) * density)));
+    return Math.round(Math.min(1200, Math.max(24, (area / 11000) * density)));
+  };
+
+  const seedFlakes = () => {
+    flakes.length = 0;
+    const count = getTargetFlakeCount();
     for (let index = 0; index < count; index += 1) {
       flakes.push(createFlake(false));
+    }
+  };
+
+  const syncFlakeCount = () => {
+    const count = getTargetFlakeCount();
+
+    if (flakes.length > count) {
+      flakes.length = count;
+      return;
+    }
+
+    while (flakes.length < count) {
+      flakes.push(createFlake(true));
     }
   };
 
@@ -226,19 +242,66 @@ if (snowCanvas) {
     });
   };
 
-  const resizeSnow = () => {
-    pixelRatio = Math.min(window.devicePixelRatio || 1, maxPixelRatio);
-    width = window.innerWidth;
-    height = window.innerHeight;
+  const resizeSnow = (reset = false) => {
+    const previousWidth = width;
+    const previousHeight = height;
+    const nextPixelRatio = Math.min(window.devicePixelRatio || 1, maxPixelRatio);
+    const nextWidth = window.innerWidth;
+    const nextHeight = window.innerHeight;
+
+    if (
+      !reset &&
+      nextWidth === width &&
+      nextHeight === height &&
+      nextPixelRatio === pixelRatio
+    ) {
+      syncCatchRects();
+      return;
+    }
+
+    pixelRatio = nextPixelRatio;
+    width = nextWidth;
+    height = nextHeight;
     snowCanvas.width = Math.floor(width * pixelRatio);
     snowCanvas.height = Math.floor(height * pixelRatio);
     snowCanvas.style.width = `${width}px`;
     snowCanvas.style.height = `${height}px`;
     context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+
+    if (previousWidth > 0 && previousWidth !== width) {
+      const widthRatio = width / previousWidth;
+      flakes.forEach((flake) => {
+        flake.x *= widthRatio;
+      });
+      settledSnow.forEach((drift) => {
+        drift.x *= widthRatio;
+      });
+    }
+
+    if (previousHeight > 0 && previousHeight !== height) {
+      const heightDelta = height - previousHeight;
+      settledSnow.forEach((drift) => {
+        drift.y += heightDelta;
+      });
+    }
+
+    if (previousHeight > 0 && height < previousHeight) {
+      flakes.forEach((flake) => {
+        if (flake.y > height + flake.radius * 2) {
+          Object.assign(flake, createFlake(true), { y: randomBetween(-80, -10) });
+        }
+      });
+    }
+
     syncCatchRects();
-    seedFlakes();
-    settledSnow.length = 0;
-    catchSnow.length = 0;
+    if (reset) {
+      seedFlakes();
+      settledSnow.length = 0;
+      catchSnow.length = 0;
+      return;
+    }
+
+    syncFlakeCount();
   };
 
   const addSettledSnow = (flake) => {
@@ -400,13 +463,13 @@ if (snowCanvas) {
     window.requestAnimationFrame(drawSnow);
   };
 
-  resizeSnow();
-  window.addEventListener("resize", resizeSnow);
+  resizeSnow(true);
+  window.addEventListener("resize", () => resizeSnow());
   window.addEventListener("scroll", syncCatchRects, { passive: true });
 
   snowVolumeControl?.addEventListener("input", () => {
     snowVolume = Number(snowVolumeControl.value) / 100;
-    seedFlakes();
+    syncFlakeCount();
   });
 
   window.requestAnimationFrame(drawSnow);

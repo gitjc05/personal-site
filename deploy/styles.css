@@ -877,6 +877,12 @@ svg {
   }
 }
 
+@media (max-width: 480px) and (orientation: portrait) {
+  .hero-art img {
+    object-position: left center;
+  }
+}
+
 @media (hover: none), (pointer: coarse) {
   .cursor-glow {
     opacity: 0;
